@@ -1182,7 +1182,7 @@ def indicator_ref(ref):
 
 def process_sighting(o):
     if indicator_ref(o["sighting_of_ref"]):
-        indicator_of_sighting = _ID_OBJECT_MAPPING[o["sighting_of_ref"]]
+        indicator_of_sighting = _ID_OBJECT_MAPPING.get(o["sighting_of_ref"])
         if not indicator_of_sighting:
             warn("%s is not in this bundle.  Referenced from %s", 308, o["sighting_of_ref"], o["id"])
             return
